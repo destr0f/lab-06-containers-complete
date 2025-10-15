@@ -2,5 +2,13 @@
 
 void plusesDeleter(vector<int>& v)
 {
-    v.erase(remove_if(v.begin(), v.end(), [](int x){ return x > 0; }), v.end());
+    size_t write = 0;
+    for (auto read = 0; read<v.size(); ++read)
+    {
+        if (v[read]<=0)
+        {
+            v[write++] = v[read];
+        }
+    }
+    v.resize(write);
 }
