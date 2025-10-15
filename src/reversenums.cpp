@@ -2,11 +2,11 @@
 
 void reverseNum(list<int>& nums)
 {
-    for (auto it = nums.begin(); it != nums.end();)
+    list<int> reversed;
+    for (auto need : nums)
     {
-        it = nums.insert(it, -(*it));
-        ++it;
-        ++it;
+        reversed.push_back(-need);
+        reversed.push_back(need);
     }
+    nums.swap(reversed);
 }
-
